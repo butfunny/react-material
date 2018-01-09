@@ -1,0 +1,116 @@
+.modal-list {
+
+  .modal-fade-enter {
+    .modal-overlay {
+      opacity 0;
+
+      .modal-box {
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+  .modal-fade-enter.modal-fade-enter-active {
+    .modal-overlay {
+      opacity: 1;
+      transition: opacity .3s ease-in-out;
+
+      .modal-box {
+        transform: translate(0, 0);
+        transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+      }
+    }
+  }
+
+  .modal-fade-exit {
+    .modal-overlay {
+      opacity: 1;
+      .modal-box {
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  .modal-fade-exit.modal-fade-exit-active {
+    .modal-overlay {
+      opacity: 0;
+      transition: opacity .3s ease-in;
+
+      .modal-box {
+        transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+
+  .modal-overlay {
+    position fixed
+    width 100%
+    height 100%
+    top 0
+    left 0
+    background rgba(black, 20%)
+    overflow-y auto
+    z-index 20
+
+  }
+
+  .modal-box {
+    position relative;
+    background white;
+    box-shadow 0 0.46875rem 2.1875rem rgba(90,97,105,.1), 0 0.9375rem 1.40625rem rgba(90,97,105,.1), 0 0.25rem 0.53125rem rgba(90,97,105,.12), 0 0.125rem 0.1875rem rgba(90,97,105,.1);
+
+
+    margin 10px auto 0 auto;
+
+
+    border-radius 3px
+    width calc(100% - 20px);
+
+    @media (min-width 769px) {
+      width 500px;
+      margin 100px auto 0 auto;
+    }
+
+    .modal-header {
+      padding: 15px 35px;
+      border-bottom: 1px solid #dfe1e3;
+
+      .modal-title {
+        font-size 20px;
+        font-weight 500;
+      }
+    }
+
+    .btn-close {
+      position: absolute;
+      font-weight: 500;
+      color: #8c949d;
+      right: 15px;
+      top: 10px;
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+
+    .modal-body {
+      padding 30px 35px;
+      font-weight: 300;
+      color: #5a6169;
+    }
+
+    .modal-footer {
+      padding 15px 35px;
+      border-top: 1px solid #dfe1e3;
+      justify-content: flex-end;
+      display flex;
+
+      .btn {
+        &:not(:last-child) {
+          margin-right 10px;
+        }
+      }
+    }
+  }
+}
