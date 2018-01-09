@@ -1,0 +1,39 @@
+{
+  "name": "Adterial",
+  "version": "1.0.0",
+  "description": "A side project from Malaysia",
+  "main": "dev-server.js",
+  "scripts": {
+    "start": "node ./server/prod-server.js",
+    "dev": "gulp dev",
+    "build-prod": "gulp build-prod"
+  },
+  "author": "CuongNguyen",
+  "dependencies": {
+    "chokidar": "^1.7.0",
+    "classnames": "^2.2.5",
+    "express": "^4.16.2",
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.3.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-run": "^1.7.1",
+    "gulp-sort": "^2.0.0",
+    "gulp-stylus": "^2.6.0",
+    "react": "^16.2.0",
+    "react-addons-update": "^15.6.2",
+    "react-dom": "^16.2.0",
+    "react-transition-group": "2.2.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "uglifyjs-webpack-plugin": "^1.1.2",
+    "babel-preset-env": "^1.6.1"
+  }
+}
