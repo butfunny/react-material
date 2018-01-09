@@ -1,4 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {MainRouter} from "./app/main-router";
 
-ReactDOM.render(<div>Heheheh</div>, document.getElementById("app-container"));
+ReactDOM.render(<MainRouter />, document.getElementById("app-container"));

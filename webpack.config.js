@@ -2,7 +2,7 @@ var path = require("path");
 
 module.exports = {
     entry: {
-        frontend: "./src/frontend/app-loader.jsx"
+        frontend: ['babel-polyfill', "./src/frontend/app-loader.jsx"]
     },
     output: {
         path: path.join( __dirname, "dist/js" ),
