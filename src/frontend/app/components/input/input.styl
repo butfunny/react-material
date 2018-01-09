@@ -1,0 +1,128 @@
+placeholder-color(color) {
+  &::-webkit-input-placeholder {
+    color: color;
+  }
+  &::-moz-placeholder {
+    color: color;
+  }
+  &:-ms-input-placeholder {
+    color: color;
+  }
+  &:-moz-placeholder {
+    color: color;
+  }
+}
+
+
+.ad-input {
+
+  position:relative;
+  margin-bottom: 45px;
+  width: 100%;
+
+
+
+  input {
+    width 100%;
+    font-size: 18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    border:none;
+    border-bottom: 1px solid #757575;
+    outline: none
+    placeholder-color(white);
+
+
+    &[disabled] {
+      border-bottom: 1px dotted #757575
+      cursor not-allowed !important;
+      color #757575;
+
+      ~.bar {
+        display none;
+      }
+
+      ~label {
+        color #757575 !important;
+      }
+    }
+
+    &:hover {
+      cursor pointer;
+    }
+
+    &:focus {
+      placeholder-color(#757575);
+      cursor text;
+
+      ~label{
+        top:-20px;
+        font-size:14px;
+        color:#5264AE;
+      }
+
+      ~.bar:before {
+        width 50%;
+      }
+      ~.bar:after {
+        width 50%;
+      }
+    }
+
+
+  }
+
+  .bar 	{
+    position:relative;
+    display:block;
+    width 100%;
+
+    &.has-value {
+      &:before, &:after {
+        width 50%;
+      }
+    }
+
+    &:before, &:after 	{
+      content:'';
+      height:2px;
+      width:0;
+      bottom:1px;
+      position:absolute;
+      background: #5264AE;
+      transition:0.2s ease all;
+      -moz-transition:0.2s ease all;
+      -webkit-transition:0.2s ease all;
+    }
+
+    &:before {
+      left:50%;
+    }
+
+    &:after {
+      right:50%;
+    }
+  }
+
+
+  label {
+    color:#999;
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+
+    &.has-value {
+      top:-20px;
+      font-size:14px;
+      color:#5264AE;
+    }
+  }
+}
+
+
