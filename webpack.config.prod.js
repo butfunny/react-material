@@ -5,7 +5,6 @@ const webpack = require("webpack");
 
 module.exports = merge(dev, {
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.js"),
         new UglifyJsPlugin({
             sourceMap: true
         }),
