@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import classnames from "classnames";
 import {CSSTransition} from "react-transition-group";
+import {RippleWrapper} from "../ripple/ripple";
 
 export class SelectItems extends React.Component {
 
@@ -53,10 +54,15 @@ export class SelectItems extends React.Component {
             <div className="select-items"
                  style={{top}}>
                 { _.map(list, (item, index) => (
-                    <div className={classnames("item" , value === item && "item-selected")}
-                         onClick={() => onSelected(item)}
-                         key={index}>
-                        {item}
+                    <div
+                        className={classnames("item", value === item && "item-selected")}
+                        onClick={() => onSelected(item)}
+                        key={index}>
+                        <RippleWrapper>
+                            <div className="item-value">
+                                {item}
+                            </div>
+                        </RippleWrapper>
                     </div>
                 ))}
             </div>

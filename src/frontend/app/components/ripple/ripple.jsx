@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import classnames from "classnames";
-import {RippleWrapper} from "../ripple/ripple";
 
-export class Button extends React.Component {
+export class RippleWrapper extends React.Component {
 
     constructor(props) {
         super(props);
@@ -32,24 +31,14 @@ export class Button extends React.Component {
         setTimeout(function() {
             ripple.remove();
         }, 800);
-
     }
 
     render() {
-
-        let {className, children} = this.props;
-
+        let {children, className} = this.props;
         return (
-            <button
-                {...this.props}
-                className={classnames("btn", className)}>
-                <RippleWrapper>
-                    <div className="btn-elem">
-                        {children}
-                    </div>
-                </RippleWrapper>
-            </button>
-
+            <div className={classnames("ripple-wrapper", className)} onMouseDown={(e) => this.mouseDown(e)}>
+                {children}
+            </div>
         );
     }
 }

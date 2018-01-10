@@ -3,7 +3,12 @@
   cursor: pointer
   height: 35px
   line-height: 35px
-  padding: 0 1.5rem
+  padding: 0;
+
+  .btn-elem {
+    padding: 0 1.5rem
+  }
+
   color: black
   font-size: 15px
   font-weight: 600
@@ -33,33 +38,7 @@
   }
 }
 
-.btn {
-  overflow: hidden
-  .ripple {
-    display: block
-    position: absolute
-    border-radius: 100%
-    background: rgba(255, 255, 255, 0.5)
-    transform: scale(0)
-    pointer-events: none
-  }
-  .animated {
-    animation: ripple 0.6s linear
-  }
-}
 
-@-webkit-keyframes ripple {
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(2.5);
-    transform: scale(2.5);
-  }
-}
-@keyframes ripple {
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(2.5);
-    transform: scale(2.5);
-  }
-}
+
+
 
