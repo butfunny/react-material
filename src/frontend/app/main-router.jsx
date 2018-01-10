@@ -2,6 +2,7 @@ import React from "react";
 import {Button} from "./components/button/button";
 import {Input} from "./components/input/input";
 import {Select} from "./components/select/select";
+import {MenuButton} from "./components/menu-button/menu-button";
 export class MainRouter extends React.Component {
 
     constructor(props) {
@@ -19,9 +20,7 @@ export class MainRouter extends React.Component {
         let {value, selectValue} = this.state;
 
         let list = [
-            'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
-            'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
-            'Louisiana', 'Maine', 'Maryland', 'Massachusetts'
+            'Alabama', 'Alaska'
         ];
 
         return (
@@ -46,6 +45,13 @@ export class MainRouter extends React.Component {
                         list={list}
                         onChange={(selectValue) => this.setState({selectValue})}
                     />
+
+
+                    <div style={{marginTop: '40px'}}>
+                        <MenuButton
+                            list={list}
+                        />
+                    </div>
                 </div>
             </div>
         );
