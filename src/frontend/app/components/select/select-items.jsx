@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import classnames from "classnames";
+import {CSSTransition} from "react-transition-group";
+
 export class SelectItems extends React.Component {
 
     constructor(props) {
@@ -46,8 +48,10 @@ export class SelectItems extends React.Component {
         let {list, value, onSelected} = this.props;
         let {top} = this.state;
 
+
         return (
-            <div className="select-items" style={{top}}>
+            <div className="select-items"
+                 style={{top}}>
                 { _.map(list, (item, index) => (
                     <div className={classnames("item" , value === item && "item-selected")}
                          onClick={() => onSelected(item)}
@@ -56,6 +60,7 @@ export class SelectItems extends React.Component {
                     </div>
                 ))}
             </div>
+
         );
     }
 }

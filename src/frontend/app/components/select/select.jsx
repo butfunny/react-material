@@ -2,12 +2,14 @@ import React from "react";
 import classnames from "classnames";
 import {ClickOutside} from "../click-outside/click-outside";
 import {SelectItems} from "./select-items";
+import {CSSTransition, TransitionGroup} from "react-transition-group";
+
 export class Select extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            open: true
+            open: false
         }
     }
 
@@ -38,13 +40,23 @@ export class Select extends React.Component {
                         <span className="bar" />
                     </div>
 
-                    { open && (
-                        <SelectItems
-                            value={value}
-                            list={list}
-                            onSelected={(item) => {this.setState({open: false}); onChange(item)}}
-                        />
-                    )}
+                    <TransitionGroup>
+                        { open && (
+                            <CSSTransition
+                                timeout={200}
+                                classNames="select-animation"
+                            >
+                                <SelectItems
+                                    value={value}
+                                    list={list}
+                                    onSelected={(item) => {this.setState({open: false}); onChange(item)}}
+                                />
+                            </CSSTransition>
+                        )}
+                    </TransitionGroup>
+
+
+
                 </div>
             </ClickOutside>
         );
