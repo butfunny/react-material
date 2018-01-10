@@ -36,7 +36,6 @@ export class MainRouter extends React.Component {
                 <div style={{width: 300 + 'px', margin: '40px auto'}}>
                     <Input
                         label="Name"
-                        placeholder="Please enter your name"
                         value={value}
                         onChange={(e) => this.setState({value: e.target.value})}
                     />
