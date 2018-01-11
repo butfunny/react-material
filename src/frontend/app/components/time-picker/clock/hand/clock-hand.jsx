@@ -18,7 +18,8 @@ export class ClockHand extends React.Component {
             $("body").css("cursor", "-webkit-grabbing");
             let x = event.clientX - centerPoint.x;
             let y = -(event.clientY - centerPoint.y);
-            this.setState({deg: Math.atan2(x, y) * 180 / Math.PI});
+            let deg = Math.atan2(x, y) * 180 / Math.PI;
+            this.props.onMove(deg > 0 ? deg : deg + 360);
 
         };
 
@@ -40,7 +41,8 @@ export class ClockHand extends React.Component {
             let touch = event.touches[0];
             let x = touch.pageX - centerPoint.x;
             let y = -(touch.pageY - centerPoint.y);
-            this.setState({deg: Math.atan2(x, y) * 180 / Math.PI});
+            let deg = Math.atan2(x, y) * 180 / Math.PI;
+            this.props.onMove(deg > 0 ? deg : deg + 360);
         };
 
         let $window = $(window);
@@ -53,7 +55,7 @@ export class ClockHand extends React.Component {
 
     render() {
 
-        let {deg} = this.state;
+        let {deg} = this.props;
 
         return (
             <div className="clock-hand">
