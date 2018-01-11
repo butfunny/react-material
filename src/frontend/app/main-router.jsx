@@ -3,6 +3,7 @@ import {Button} from "./components/button/button";
 import {Input} from "./components/input/input";
 import {Select} from "./components/select/select";
 import {MenuButton} from "./components/menu-button/menu-button";
+import {TimePicker} from "./components/time-picker/time-picker";
 export class MainRouter extends React.Component {
 
     constructor(props) {
@@ -52,7 +53,11 @@ export class MainRouter extends React.Component {
                             list={list}
                         />
                     </div>
+
+
+                    <TimePicker />
                 </div>
+
             </div>
         );
     }
