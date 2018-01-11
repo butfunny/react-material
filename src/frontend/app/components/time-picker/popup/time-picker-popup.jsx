@@ -17,12 +17,14 @@ export class TimePickerPopup extends React.Component {
 
     changeView(type) {
         let container = $(ReactDOM.findDOMNode(this));
-        container.find(".line").css({transition: 'transform .3s'});
-        container.find(".hour-number").css({transition: 'color .5s'});
+        let $line = container.find(".line");
+        let $selected = container.find(".hour-number");
+        $line.css({transition: 'transform .3s'});
+        $selected.css({transition: 'color .5s'});
         this.setState({type}, () => {
             setTimeout(() => {
-                container.find(".line").css({transition: ""});
-                container.find(".hour-number").css({transition: ""});
+                $line.css({transition: ""});
+                $selected.css({transition: ""});
             }, 300)
         })
     }
