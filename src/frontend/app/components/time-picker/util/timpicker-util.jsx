@@ -8,6 +8,7 @@ export let timePickerUtil = {
     }),
     parse: (oriDate, val) => {
         let hour = val.noon ? val.hour + 12 : val.hour;
-        return oriDate.setHours(hour).setMinutes(parseInt(val.minute))
-    }
+        return oriDate.setHours(hour).setMinutes(val.minute)
+    },
+    formatMinute: (minute) => minute < 10 ? '0' + minute : minute
 };

@@ -41,7 +41,7 @@ export class TimePickerPopup extends React.Component {
                 </button>
 
                 <button onClick={() => this.changeView("minute")}>
-                    {value.minute}
+                    {timePickerUtil.formatMinute(value.minute)}
                 </button>
 
                 <Clock
