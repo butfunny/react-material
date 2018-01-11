@@ -10,11 +10,12 @@ export class ClockFace extends React.Component {
         let minuteNumb = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
 
         return (
-            <div className="ad-clock-face">
+            <div className="ad-clock-face"
+            >
                 { _.map(type == "hour" ? hourNumb : minuteNumb, (numb, index) => (
                     <div
+                        onTouchStart={(e) => {onChange(numb); clockHandElem().handleTouchStart(e)}}
                         onMouseDown={(e) => clockHandElem().handleMouseDown(e)}
-                        onTouchStart={(e) => clockHandElem().handleTouchStart(e)}
                         className={classnames("hour-number", `clock-deg-${30 * (type == "hour" ? index + 1 : index)}`, numb == value && "selected")}
                         onClick={() => onChange(numb)}
                      key={index}

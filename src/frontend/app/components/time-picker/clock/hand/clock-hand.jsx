@@ -58,14 +58,15 @@ export class ClockHand extends React.Component {
         let {deg} = this.props;
 
         return (
-            <div className="clock-hand">
+            <div className="clock-hand"
+                 onMouseDown={(e) => this.handleMouseDown(e)}
+                 onTouchStart={(e) => this.handleTouchStart(e)}
+            >
                 <div className="center-point"/>
                 <div className="line"
                      style={{
                          transform: `translate(-50%, -50%) rotate(${deg}deg)`
                      }}
-                     onMouseDown={(e) => this.handleMouseDown(e)}
-                     onTouchStart={(e) => this.handleTouchStart(e)}
                 >
                     <div className="targeted-point" />
                 </div>
