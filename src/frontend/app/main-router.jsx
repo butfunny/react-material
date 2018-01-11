@@ -10,7 +10,8 @@ export class MainRouter extends React.Component {
         super(props);
         this.state = {
             value: "",
-            selectValue: null
+            selectValue: null,
+            time: new Date()
         }
     }
 
@@ -18,7 +19,7 @@ export class MainRouter extends React.Component {
 
     render() {
 
-        let {value, selectValue} = this.state;
+        let {value, selectValue, time} = this.state;
 
         let list = [
             'Alabama', 'Alaska'
@@ -55,7 +56,10 @@ export class MainRouter extends React.Component {
                     </div>
 
 
-                    <TimePicker />
+                    <TimePicker
+                        value={time}
+                        onChange={(time) => this.setState({time})}
+                    />
                 </div>
 
             </div>

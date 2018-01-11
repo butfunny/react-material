@@ -2,13 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 export class ClockHand extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            deg: 0
-        }
-    }
-
     handleMouseDown(e) {
         e.preventDefault();
 
@@ -55,7 +48,12 @@ export class ClockHand extends React.Component {
 
     render() {
 
-        let {deg} = this.props;
+        let {deg, type} = this.props;
+
+        let isShowSelectedPoint = () => {
+            if (type == "hour") return true;
+            return deg%30 == 0
+        };
 
         return (
             <div className="clock-hand"
@@ -69,6 +67,8 @@ export class ClockHand extends React.Component {
                      }}
                 >
                     <div className="targeted-point" />
+
+                    { isShowSelectedPoint() && <div className="selected-point" /> }
                 </div>
 
             </div>

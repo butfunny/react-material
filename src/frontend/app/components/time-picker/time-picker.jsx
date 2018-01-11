@@ -1,5 +1,5 @@
 import React from "react";
-import {Clock} from "./clock/clock";
+import {TimePickerPopup} from "./popup/time-picker-popup";
 export class TimePicker extends React.Component {
 
     constructor(props) {
@@ -7,9 +7,15 @@ export class TimePicker extends React.Component {
     }
 
     render() {
+
+        let {onChange, value} = this.props;
+
         return (
             <div>
-                <Clock />
+                <TimePickerPopup
+                    time={value}
+                    onChange={onChange}
+                />
             </div>
         );
     }
