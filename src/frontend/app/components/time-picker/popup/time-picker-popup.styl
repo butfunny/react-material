@@ -1,0 +1,67 @@
+.time-picker {
+  .modal-box {
+    width 300px;
+  }
+
+  .btn-close {
+    display none;
+  }
+
+
+}
+
+.time-picker-popup {
+
+  border-radius 5px;
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 45px, rgba(0, 0, 0, 0.22) 0px 10px 18px;
+
+  .popup-header {
+    background #008B7D;
+    padding 15px 60px;
+    text-align right;
+    position relative;
+
+    .item {
+      font-size 50px;
+      color #84C9C3;
+      cursor pointer;
+
+      &.selected {
+        color white;
+      }
+
+    }
+
+    .noon {
+      position absolute;
+      right: 20px;
+      bottom: 20px;
+
+      .noon-item {
+        color #84C9C3;
+        cursor pointer;
+        margin-top 3px;
+
+        &.selected {
+          color white;
+        }
+      }
+    }
+  }
+
+  .popup-body {
+    padding: 30px 15px;
+    height: 330px;
+  }
+
+  .popup-footer {
+    text-align right;
+    padding 10px 5px;
+    .btn {
+      color #008B7D;
+      font-size 15px;
+
+    }
+  }
+}

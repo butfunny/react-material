@@ -9,6 +9,16 @@
     padding: 0 1.5rem
   }
 
+  &.outline {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    &:hover {
+      background-color: lighten(#cecece, 70%) !important; box-shadow: none !important;
+    }
+    &.disabled:hover,
+    &[disabled]:hover { background-color: transparent !important;}
+  }
+
   color: black
   font-size: 15px
   font-weight: 600

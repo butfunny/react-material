@@ -4,6 +4,7 @@ import {Input} from "./components/input/input";
 import {Select} from "./components/select/select";
 import {MenuButton} from "./components/menu-button/menu-button";
 import {TimePicker} from "./components/time-picker/time-picker";
+import {ModalsRegistry} from "./components/modal/modals";
 export class MainRouter extends React.Component {
 
     constructor(props) {
@@ -11,7 +12,7 @@ export class MainRouter extends React.Component {
         this.state = {
             value: "",
             selectValue: null,
-            time: new Date()
+            time: null
         }
     }
 
@@ -61,6 +62,8 @@ export class MainRouter extends React.Component {
                         onChange={(time) => this.setState({time})}
                     />
                 </div>
+
+                <ModalsRegistry/>
 
             </div>
         );

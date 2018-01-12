@@ -14,7 +14,7 @@ export class Input extends React.Component {
                 <input
                     {...this.props}
                 />
-                <label className={value && value.length > 0 && "has-value"}>{label}</label>
+                <label className={(value && value.length > 0) && "has-value"}>{label}</label>
                 <span className={classnames("bar", value && value.length > 0 && "has-value")} />
             </div>
         );
