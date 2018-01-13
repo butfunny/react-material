@@ -1,0 +1,87 @@
+.date-picker-popup {
+  .calendar {
+    width 294px;
+    font-size 14px;
+
+    .weekly-day-title {
+      .weekly {
+        display inline-block;
+        height 20px;
+        width 42px;
+        line-height 20px;
+        color: #9E9E9E;
+        text-align center;
+
+      }
+    }
+
+    .days {
+      .day {
+        position relative;
+        display inline-block;
+        width 42px;
+        height 42px;
+        text-align center;
+        cursor pointer;
+
+        &.no-date {
+          cursor inherit;
+        }
+
+
+
+
+        .day-value {
+          position absolute;
+          z-index 2;
+          left 50%;
+          top: 50%;
+          color black;
+          transform translate(-50%, -50%)
+          transition color .3s;
+
+          &.today {
+            color #008B7D;
+          }
+        }
+
+        &:hover {
+          .background-behind {
+            transform translate(-50%, -50%) scale(1);
+            background lighten(#008B7D, 10%);
+          }
+
+          .day-value {
+            color white;
+          }
+        }
+
+
+        &.selected {
+          .background-behind {
+            transform translate(-50%, -50%) scale(1);
+            background #008B7D;
+
+          }
+
+          .day-value {
+            color white;
+          }
+        }
+
+        .background-behind {
+          z-index 1;
+          width 32px;
+          height 32px;
+          border-radius 50%;
+          position absolute;
+          top: 50%;
+          left: 50%;
+          transform translate(-50%, -50%) scale(0)
+          transition transform .3s
+          background #008B7D;
+        }
+      }
+    }
+  }
+}

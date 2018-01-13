@@ -5,6 +5,7 @@ import {Select} from "./components/select/select";
 import {MenuButton} from "./components/menu-button/menu-button";
 import {TimePicker} from "./components/time-picker/time-picker";
 import {ModalsRegistry} from "./components/modal/modals";
+import {DatePicker} from "./components/date-picker/date-picker";
 export class MainRouter extends React.Component {
 
     constructor(props) {
@@ -61,6 +62,9 @@ export class MainRouter extends React.Component {
                         value={time}
                         onChange={(time) => this.setState({time})}
                     />
+
+
+                    <DatePicker />
                 </div>
 
                 <ModalsRegistry/>
