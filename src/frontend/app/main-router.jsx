@@ -75,6 +75,8 @@ export class MainRouter extends React.Component {
                         onChange={(time) => this.setState({time})}
                     />
 
+                    <small>Vuốt sang trái, sang phải trên lịch có thể chuyển tháng</small>
+
 
                     <DatePicker
                         value={time}
