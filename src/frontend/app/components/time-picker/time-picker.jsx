@@ -4,15 +4,13 @@ import {Button} from "../button/button";
 import {modals} from "../modal/modals";
 import {Input} from "../input/input";
 import moment from "moment";
+import classnames from "classnames";
 
 export class TimePicker extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     open() {
         let {onChange, value} = this.props;
+
 
         let handleConfirm = (date) => {
             onChange(date);
@@ -36,13 +34,13 @@ export class TimePicker extends React.Component {
         let {value} = this.props;
 
         return (
-            <Input
-                label="Select Time"
-                value={value ? moment(value).format('h:mm a') : ""}
-                readOnly
-                onClick={() => this.open()}
-            />
 
+            <div className={classnames("time-picker-input")}
+                 onClick={() => this.open()}
+            >
+                <label className={classnames(value && "has-value")}>Select Time</label>
+                <div className="value"> {value ? moment(value).format('h:mm a') : ""}</div>
+            </div>
         );
     }
 }

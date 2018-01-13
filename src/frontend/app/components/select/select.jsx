@@ -36,8 +36,6 @@ export class Select extends React.Component {
                         <i className="material-icons">
                             arrow_drop_down
                         </i>
-
-                        <span className="bar" />
                     </div>
 
                     <TransitionGroup>

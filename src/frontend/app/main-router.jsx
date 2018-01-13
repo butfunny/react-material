@@ -37,6 +37,12 @@ export class MainRouter extends React.Component {
                     Hello
                 </Button>
 
+                <div style={{marginTop: '40px'}}>
+                    <MenuButton
+                        list={list}
+                    />
+                </div>
+
                 <div style={{width: 300 + 'px', margin: '40px auto'}}>
                     <Input
                         label="Name"
@@ -51,12 +57,6 @@ export class MainRouter extends React.Component {
                         onChange={(selectValue) => this.setState({selectValue})}
                     />
 
-
-                    <div style={{marginTop: '40px'}}>
-                        <MenuButton
-                            list={list}
-                        />
-                    </div>
 
 
                     <TimePicker

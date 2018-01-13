@@ -28,9 +28,11 @@ placeholder-color(color) {
     padding:10px 10px 10px 5px;
     display:block;
     border:none;
-    border-bottom: 1px solid #757575;
+    border-bottom: 1px solid;
+    border-bottom-color #757575;
     outline: none
     placeholder-color(white);
+    transition border-bottom-color .3s
 
 
     &[disabled] {
@@ -51,6 +53,7 @@ placeholder-color(color) {
     &:focus {
       placeholder-color(#757575);
       cursor text;
+      border-bottom-color #5264AE
 
       ~label{
         top:-20px;
@@ -58,47 +61,10 @@ placeholder-color(color) {
         color:#5264AE;
       }
 
-      ~.bar:before {
-        width 50%;
-      }
-      ~.bar:after {
-        width 50%;
-      }
+
     }
 
 
-  }
-
-  .bar 	{
-    position:relative;
-    display:block;
-    width 100%;
-
-    &.has-value {
-      &:before, &:after {
-        width 50%;
-      }
-    }
-
-    &:before, &:after 	{
-      content:'';
-      height:2px;
-      width:0;
-      bottom:1px;
-      position:absolute;
-      background: #5264AE;
-      transition:0.2s ease all;
-      -moz-transition:0.2s ease all;
-      -webkit-transition:0.2s ease all;
-    }
-
-    &:before {
-      left:50%;
-    }
-
-    &:after {
-      right:50%;
-    }
   }
 
 

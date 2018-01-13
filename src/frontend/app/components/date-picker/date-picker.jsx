@@ -1,8 +1,8 @@
 import React from "react";
 import {DatePickerPopup} from "./popup/date-picker-popup";
 import moment from "moment/moment";
-import {Input} from "../input/input";
 import {modals} from "../modal/modals";
+import classnames from "classnames";
 export class DatePicker extends React.Component {
 
     constructor(props) {
@@ -32,15 +32,15 @@ export class DatePicker extends React.Component {
 
     render() {
 
-        let {value} = this.props;
+        let {value, label} = this.props;
 
         return (
-            <Input
-                label="Select Date"
-                value={value ? moment(value).format('MM/DD/YYYY') : ""}
-                readOnly
+            <div className={classnames("date-picker-input")}
                 onClick={() => this.open()}
-            />
+            >
+                <label className={classnames(value && "has-value")}>Select Date</label>
+                <div className="value"> {value ? moment(value).format("MM/DD/YYYY"): ""}</div>
+            </div>
         );
     }
 }

@@ -2,9 +2,13 @@
 
   position relative;
   cursor pointer;
+  margin-bottom 40px;
 
   .select-value {
     position relative;
+
+    transition border-bottom .3s
+
     &.open, &.has-value {
       .label {
         top:-20px;
@@ -12,12 +16,7 @@
         color:#5264AE;
       }
 
-      .bar:before {
-        width 50%;
-      }
-      .bar:after {
-        width 50%;
-      }
+      border-bottom: 1px solid #5264AE;
     }
 
     .value {
@@ -50,37 +49,6 @@
       right 0;
     }
 
-    .bar 	{
-      position:relative;
-      display:block;
-      width 100%;
-
-      &.has-value {
-        &:before, &:after {
-          width 50%;
-        }
-      }
-
-      &:before, &:after 	{
-        content:'';
-        height:2px;
-        width:0;
-        bottom:1px;
-        position:absolute;
-        background: #5264AE;
-        transition:0.2s ease all;
-        -moz-transition:0.2s ease all;
-        -webkit-transition:0.2s ease all;
-      }
-
-      &:before {
-        left:50%;
-      }
-
-      &:after {
-        right:50%;
-      }
-    }
 
 
   }
