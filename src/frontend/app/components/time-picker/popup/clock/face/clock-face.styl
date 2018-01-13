@@ -1,0 +1,46 @@
+.ad-clock .ad-clock-face {
+  position relative;
+  width 100%;
+  height 100%;
+
+  .hour-number {
+    position absolute
+    transform: translate(-50%,-50%);
+    width: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius 100%;
+    z-index 1;
+    cursor pointer;
+    color black;
+
+
+    &.selected {
+      background transparent;
+      color white;
+      z-index 3;
+    }
+  }
+
+  .center-point {
+    background: #00897b;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  generate-degree();
+
+}
+
+
+generate-degree()
+for i in 0..12
+  degree = (270 + i*30) - (floor((270 + i*30) / 360) * 360)
+
+  .clock-deg-{i*30}
+    top (((1 + sin(degree * 1deg)) * 100%) / 2)
+    left (((1 + cos(degree * 1deg)) * 100%) / 2)

@@ -1,0 +1,38 @@
+.date-picker-input, .time-picker-input {
+  width: 100%;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #757575;
+  outline: none;
+  height 42px;
+  position relative;
+  cursor text
+  transition border-bottom .3ms
+  margin-bottom 40px;
+
+
+  &.has-value {
+    border-bottom: 1px solid #008B7D
+
+    label {
+      top:-20px;
+      font-size:14px;
+      color:#008B7D;
+    }
+  }
+
+
+  label {
+    color:#999;
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all;
+
+  }
+}

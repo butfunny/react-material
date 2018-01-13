@@ -1,0 +1,56 @@
+.btn {
+  position: relative
+  cursor: pointer
+  height: 35px
+  line-height: 35px
+  padding: 0;
+
+  .btn-elem {
+    padding: 0 1.5rem
+  }
+
+  &.outline {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    @media (min-width 769px) {
+      &:hover {
+        background-color: lighten(#cecece, 70%) !important; box-shadow: none !important;
+      }
+    }
+    &.disabled:hover,
+    &[disabled]:hover { background-color: transparent !important;}
+  }
+
+  color: black
+  font-size: 15px
+  font-weight: 600
+  letter-spacing: .8px
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase
+  vertical-align: middle
+  white-space: nowrap
+  outline: none
+  border: none
+  user-select: none
+  border-radius: 2px
+  transition: box-shadow 100ms ease-out
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225)
+
+  &:hover {
+    text-decoration: none
+    box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.225)
+  }
+
+  &[disabled] {
+    cursor not-allowed;
+    background-color: #cdcdcd !important;
+    box-shadow: none !important;
+    color: #9e9e9e !important;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,130 @@
+.date-picker-popup {
+  .calendar {
+    font-size 14px;
+
+    .weekly-day-title {
+      .weekly {
+        display inline-block;
+        height 20px;
+        width 42px;
+        line-height 20px;
+        color: #9E9E9E;
+        text-align center;
+
+      }
+    }
+
+    .month-view {
+      width 100%;
+      position relative;
+      text-align center;
+      height 50px;
+      line-height 50px;
+      padding: 0 40px;
+
+      .month-value {
+        font-weight bold;
+        height 50px;
+      }
+
+      .button {
+        position absolute;
+        height: 30px;
+        border-radius: 50%;
+        width: 30px;
+        top: 13px;
+        z-index 10;
+
+        &.left {
+          left 0;
+        }
+
+        &.right {
+          right 0;
+        }
+
+        .ripple-wrapper {
+          border-radius: 50%;
+        }
+
+        .btn-elem {
+          padding 0;
+        }
+      }
+    }
+
+    .days-wrapper {
+
+      height 100%;
+
+      .day {
+        position relative;
+        display inline-block;
+        width 42px;
+        height 42px;
+        text-align center;
+        cursor pointer;
+
+        &.no-date {
+          cursor inherit;
+        }
+
+
+
+
+        .day-value {
+          position absolute;
+          z-index 2;
+          left 50%;
+          top: 50%;
+          color black;
+          transform translate(-50%, -50%)
+          transition color .3s;
+
+          &.today {
+            color #008B7D;
+          }
+        }
+
+        @media (min-width 769px) {
+          &:hover {
+            .background-behind {
+              transform translate(-50%, -50%) scale(1);
+              background lighten(#008B7D, 10%);
+            }
+
+            .day-value {
+              color white;
+            }
+          }
+        }
+
+
+        &.selected {
+          .background-behind {
+            transform translate(-50%, -50%) scale(1);
+            background #008B7D;
+
+          }
+
+          .day-value {
+            color white;
+          }
+        }
+
+        .background-behind {
+          z-index 1;
+          width 32px;
+          height 32px;
+          border-radius 50%;
+          position absolute;
+          top: 50%;
+          left: 50%;
+          transform translate(-50%, -50%) scale(0)
+          transition all .3s
+          background #008B7D;
+        }
+      }
+    }
+  }
+}

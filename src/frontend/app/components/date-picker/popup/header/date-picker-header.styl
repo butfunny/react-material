@@ -1,0 +1,38 @@
+.date-picker-header {
+  width: 100%;
+  float: none;
+  background-color: #008B7D;
+  padding: 20px;
+  box-sizing: border-box;
+  border-top-left-radius  5px;
+  border-top-right-radius 5px;
+
+  .year {
+    font-weight 300;
+    cursor pointer;
+    font-size 18px;
+    transition color .3s
+    color: #b5eaf2;
+    display inline-block;
+
+
+
+    &.selected {
+      color white;
+    }
+  }
+
+  .date {
+    font-weight 700;
+    color: #b5eaf2;
+    font-size 28px;
+    cursor pointer;
+    height 33px;
+    transition color .3s
+    display block;
+
+    &.selected {
+      color white;
+    }
+  }
+}

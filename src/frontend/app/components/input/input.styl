@@ -1,0 +1,91 @@
+placeholder-color(color) {
+  &::-webkit-input-placeholder {
+    color: color;
+  }
+  &::-moz-placeholder {
+    color: color;
+  }
+  &:-ms-input-placeholder {
+    color: color;
+  }
+  &:-moz-placeholder {
+    color: color;
+  }
+}
+
+
+.ad-input {
+
+  position:relative;
+  margin-bottom: 45px;
+  width: 100%;
+
+
+
+  input {
+    width 100%;
+    font-size: 18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    border:none;
+    border-bottom: 1px solid;
+    border-bottom-color #757575;
+    outline: none
+    placeholder-color(white);
+    transition border-bottom-color .3s
+
+
+    &[disabled] {
+      border-bottom: 1px dotted #757575
+      cursor not-allowed !important;
+      color #757575;
+
+      ~.bar {
+        display none;
+      }
+
+      ~label {
+        color #757575 !important;
+      }
+    }
+
+
+    &:focus {
+      placeholder-color(#757575);
+      cursor text;
+      border-bottom-color #008B7D
+
+      ~label{
+        top:-20px;
+        font-size:14px;
+        color:#008B7D;
+      }
+
+
+    }
+
+
+  }
+
+
+  label {
+    color:#999;
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+
+    &.has-value {
+      top:-20px;
+      font-size:14px;
+      color:#008B7D;
+    }
+  }
+}
+
+
