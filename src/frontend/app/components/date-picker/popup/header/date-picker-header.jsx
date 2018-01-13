@@ -15,7 +15,7 @@ export class DatePickerHeader extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (datePickerUtil.compareDate(this.props.date, nextProps.date) == 0) return;
-        this.setState({selectedIndex: datePickerUtil.compareDate(this.props.date, nextProps.date) < 0 ? this.state.selectedIndex + 1 : this.state.selectedIndex - 1});
+        this.setState({selectedIndex: datePickerUtil.compareDate(this.props.date, nextProps.date) < 0 ? this.state.selectedIndex - 1 : this.state.selectedIndex + 1});
     }
 
     render() {
