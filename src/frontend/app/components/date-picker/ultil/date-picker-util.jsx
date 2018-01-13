@@ -83,12 +83,30 @@ let compareDate = (date1, date2) => {
 };
 
 
-let parseDate = (date) => ({
+let formatDate = (date) => ({
     day: new Date(date).getDate(),
     month: new Date(date).getMonth() + 1,
     year: new Date(date).getFullYear()
 });
 
+
+let parseDate = (oriDate, date) => {
+    let _date =  new Date(oriDate);
+    _date.setDate(date.day);
+    _date.setMonth(date.month - 1);
+    _date.setFullYear(date.year);
+    return _date;
+};
+
+let genListYear = (year) => {
+    let currentYear = year || new Date().getFullYear();
+    let years = [];
+    for (let i = currentYear - 100 < 1 ? 1 : currentYear - 100; i <= currentYear + 100; i++) {
+        years.push(i);
+    }
+
+    return years;
+};
 
 export let datePickerUtil = {
     subtractMonth,
@@ -96,5 +114,7 @@ export let datePickerUtil = {
     genCalendar,
     compareDate,
     parseDate,
-    toDate
+    toDate,
+    genListYear,
+    formatDate
 };

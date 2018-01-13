@@ -13,7 +13,8 @@ export class MainRouter extends React.Component {
         this.state = {
             value: "",
             selectValue: null,
-            time: null
+            time: null,
+            date: null
         }
     }
 
@@ -64,7 +65,10 @@ export class MainRouter extends React.Component {
                     />
 
 
-                    <DatePicker />
+                    <DatePicker
+                        value={time}
+                        onChange={(time) => this.setState({time})}
+                    />
                 </div>
 
                 <ModalsRegistry/>

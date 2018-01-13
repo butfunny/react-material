@@ -12,32 +12,34 @@ export class Calendar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedIndex: 0,
-            calendarDate: props.date
+            selectedIndex: 0
         }
     }
 
     goPreviousMonth() {
-        let {calendarDate} = this.state;
-        let newDate = datePickerUtil.subtractMonth(calendarDate);
-        this.setState({selectedIndex: this.state.selectedIndex - 1, calendarDate: newDate});
+        let {dateView, onChangeDateView} = this.props;
+        let newDate = datePickerUtil.subtractMonth(dateView);
+        this.setState({selectedIndex: this.state.selectedIndex - 1});
+        onChangeDateView(newDate);
+
     }
 
     goNextMonth() {
-        let {calendarDate} = this.state;
-        let newDate = datePickerUtil.plusMonth(calendarDate);
-        this.setState({selectedIndex: this.state.selectedIndex + 1, calendarDate: newDate});
+        let {dateView, onChangeDateView} = this.props;
+        let newDate = datePickerUtil.plusMonth(dateView);
+        this.setState({selectedIndex: this.state.selectedIndex + 1});
+        onChangeDateView(newDate);
     }
 
 
 
     render() {
 
-        let {date, onChange} = this.props;
-        let {selectedIndex, calendarDate} = this.state;
+        let {date, onChange, dateView} = this.props;
+        let {selectedIndex} = this.state;
 
         let weeklyDayTitle = ["S", "M", "T", "W", "T", "F", "S"];
-        let calendar = datePickerUtil.genCalendar(calendarDate);
+        let calendar = datePickerUtil.genCalendar(dateView);
         return (
             <div className="calendar">
                 <div className="month-view">
@@ -53,7 +55,7 @@ export class Calendar extends React.Component {
                             selectedIndex={selectedIndex}
                             getComponent={() => (
                                 <div>
-                                    {moment(datePickerUtil.toDate(calendarDate)).format("MMMM YYYY")}
+                                    {moment(datePickerUtil.toDate(dateView)).format("MMMM YYYY")}
                                 </div>
                             )}
                         />
@@ -87,11 +89,11 @@ export class Calendar extends React.Component {
                                 >
                                     { _.map(calendar, (item, index) => (
                                         <div key={index}
-                                             onClick={() => item.day && onChange({...calendarDate, day: item.day})}
-                                             className={classnames("day", datePickerUtil.compareDate(date, {...calendarDate, day: item.day}) == 0 && "selected", !item.day && "no-date")}>
+                                             onClick={() => item.day && onChange({...dateView, day: item.day})}
+                                             className={classnames("day", datePickerUtil.compareDate(date, {...dateView, day: item.day}) == 0 && "selected", !item.day && "no-date")}>
                                             { item.day && (
                                                 <div className={classnames("day-value",
-                                                    datePickerUtil.compareDate({...calendarDate, day: item.day}, datePickerUtil.parseDate(new Date())) == 0 && "today"
+                                                    datePickerUtil.compareDate({...dateView, day: item.day}, datePickerUtil.formatDate(new Date())) == 0 && "today"
                                                 )}
                                                 >
                                                     {item.day}
