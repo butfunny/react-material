@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "dev-server.js",
-  "scripts": {
-    "start": "node ./server/prod-server.js",
-    "dev": "gulp dev",
-    "build-prod": "gulp build-prod"
-  },
   "author": "CuongNguyen",
   "dependencies": {
     "chokidar": "^1.7.0",
