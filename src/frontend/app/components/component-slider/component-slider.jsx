@@ -14,7 +14,14 @@ export class ComponentSlider extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.selectedIndex !== this.props.selectedIndex) {
-            this.setState({direction: nextProps.selectedIndex > this.props.selectedIndex ? "right" : "left"});
+
+            if (nextProps.topBottom) {
+                this.setState({direction: nextProps.selectedIndex > this.props.selectedIndex ? "top" : "bottom"});
+
+            } else {
+                this.setState({direction: nextProps.selectedIndex > this.props.selectedIndex ? "right" : "left"});
+            }
+
         }
     }
 

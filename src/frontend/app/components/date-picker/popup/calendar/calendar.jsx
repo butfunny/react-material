@@ -75,37 +75,39 @@ export class Calendar extends React.Component {
                     )) }
                 </div>
 
-                <ComponentSlider
-                    selectedIndex={selectedIndex}
-                    getComponent={() => (
-                        <SwipeHorizontally
-                            onNext={() => this.goNextMonth()}
-                            onGoPrevious={() => this.goPreviousMonth()}
-                        >
-                            <div className="days"
+                <div className="days-wrapper">
+                    <ComponentSlider
+                        selectedIndex={selectedIndex}
+                        getComponent={() => (
+                            <SwipeHorizontally
+                                onNext={() => this.goNextMonth()}
+                                onGoPrevious={() => this.goPreviousMonth()}
                             >
-                                { _.map(calendar, (item, index) => (
-                                    <div key={index}
-                                         onClick={() => item.day && onChange({...calendarDate, day: item.day})}
-                                         className={classnames("day", datePickerUtil.compareDate(date, {...calendarDate, day: item.day}) == 0 && "selected", !item.day && "no-date")}>
-                                        { item.day && (
-                                            <div className={classnames("day-value",
-                                                datePickerUtil.compareDate({...calendarDate, day: item.day}, datePickerUtil.parseDate(new Date())) == 0 && "today"
+                                <div className="days"
+                                >
+                                    { _.map(calendar, (item, index) => (
+                                        <div key={index}
+                                             onClick={() => item.day && onChange({...calendarDate, day: item.day})}
+                                             className={classnames("day", datePickerUtil.compareDate(date, {...calendarDate, day: item.day}) == 0 && "selected", !item.day && "no-date")}>
+                                            { item.day && (
+                                                <div className={classnames("day-value",
+                                                    datePickerUtil.compareDate({...calendarDate, day: item.day}, datePickerUtil.parseDate(new Date())) == 0 && "today"
+                                                )}
+                                                >
+                                                    {item.day}
+                                                </div>
                                             )}
-                                            >
-                                                {item.day}
-                                            </div>
-                                        )}
 
-                                        { item.day && (
-                                            <div className="background-behind" />
-                                        )}
-                                    </div>
-                                )) }
-                            </div>
-                        </SwipeHorizontally>
-                    )}
-                />
+                                            { item.day && (
+                                                <div className="background-behind" />
+                                            )}
+                                        </div>
+                                    )) }
+                                </div>
+                            </SwipeHorizontally>
+                        )}
+                    />
+                </div>
 
 
             </div>
