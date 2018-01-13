@@ -12,15 +12,15 @@
   transition border-bottom .3ms
   margin-bottom 40px;
 
-  &.focus {
-    label{
+
+  &.has-value {
+    border-bottom: 1px solid #008B7D
+
+    label {
       top:-20px;
       font-size:14px;
-      color:#5264AE;
+      color:#008B7D;
     }
-
-    border-bottom: 1px solid #5264AE
-
   }
 
 
@@ -34,10 +34,5 @@
     top:10px;
     transition:0.2s ease all;
 
-    &.has-value {
-      top:-20px;
-      font-size:14px;
-      color:#5264AE;
-    }
   }
 }

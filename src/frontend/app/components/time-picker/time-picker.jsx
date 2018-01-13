@@ -35,10 +35,10 @@ export class TimePicker extends React.Component {
 
         return (
 
-            <div className={classnames("time-picker-input")}
+            <div className={classnames("time-picker-input", value && "has-value")}
                  onClick={() => this.open()}
             >
-                <label className={classnames(value && "has-value")}>Select Time</label>
+                <label>Select Time</label>
                 <div className="value"> {value ? moment(value).format('h:mm a') : ""}</div>
             </div>
         );

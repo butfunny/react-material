@@ -35,10 +35,10 @@ export class DatePicker extends React.Component {
         let {value, label} = this.props;
 
         return (
-            <div className={classnames("date-picker-input")}
+            <div className={classnames("date-picker-input", value && "has-value")}
                 onClick={() => this.open()}
             >
-                <label className={classnames(value && "has-value")}>Select Date</label>
+                <label>Select Date</label>
                 <div className="value"> {value ? moment(value).format("MM/DD/YYYY"): ""}</div>
             </div>
         );
