@@ -12,8 +12,10 @@
   &.outline {
     box-shadow: none !important;
     background-color: transparent !important;
-    &:hover {
-      background-color: lighten(#cecece, 70%) !important; box-shadow: none !important;
+    @media (min-width 769px) {
+      &:hover {
+        background-color: lighten(#cecece, 70%) !important; box-shadow: none !important;
+      }
     }
     &.disabled:hover,
     &[disabled]:hover { background-color: transparent !important;}

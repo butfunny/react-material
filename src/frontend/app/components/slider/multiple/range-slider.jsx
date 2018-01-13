@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import classnames from "classnames";
 import update from "react-addons-update";
-import PropTypes from 'prop-types';
-import {dragRangeService} from "../../../common/drag-range-service";
+import {dragRangeService} from "../drag-range-service";
 
 export class RangeSlider extends React.Component {
 
@@ -100,15 +99,3 @@ export class RangeSlider extends React.Component {
     }
 }
 
-RangeSlider.propTypes = {
-    onChange: PropTypes.func.isRequired,
-    max: PropTypes.number.isRequired,
-    min: PropTypes.number.isRequired,
-    value: PropTypes.object.isRequired,
-    customProp: (props, propName, componentName) => {
-        let {max, min, value} = props;
-        if (max < min) return new Error(`max need > min at ${componentName}`);
-        if (!value.from || !value.to) return new Error(`value need type of {from: Number, to: Number} at ${componentName}`);
-        if (!value.from > value.to) return new Error(`from need < to at ${componentName}`);
-    }
-};

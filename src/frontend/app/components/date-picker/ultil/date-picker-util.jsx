@@ -74,7 +74,7 @@ let toDate = (date) => {
     if (typeof date === "string") return new Date(date);
     const {year, month, day = 1} = date;
     return new Date(year, month - 1, day, 0, 0, 0, 0);
-}
+};
 
 
 let compareDate = (date1, date2) => {
@@ -95,5 +95,6 @@ export let datePickerUtil = {
     plusMonth,
     genCalendar,
     compareDate,
-    parseDate
+    parseDate,
+    toDate
 };

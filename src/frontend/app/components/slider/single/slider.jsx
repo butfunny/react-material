@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import classnames from "classnames";
-import {dragRangeService} from "../../../common/drag-range-service";
+import {dragRangeService} from "../drag-range-service";
+
 export class Slider extends React.Component {
 
     constructor(props){

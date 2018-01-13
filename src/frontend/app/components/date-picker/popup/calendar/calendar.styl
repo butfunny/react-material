@@ -15,7 +15,49 @@
       }
     }
 
+    .month-view {
+      width 100%;
+      position relative;
+      text-align center;
+      height 50px;
+      line-height 50px;
+      padding: 0 40px;
+
+      .month-value {
+        font-weight bold;
+        height 50px;
+      }
+
+      .button {
+        position absolute;
+        height: 30px;
+        border-radius: 50%;
+        width: 30px;
+        top: 13px;
+        z-index 10;
+
+        &.left {
+          left 0;
+        }
+
+        &.right {
+          right 0;
+        }
+
+        .ripple-wrapper {
+          border-radius: 50%;
+        }
+
+        .btn-elem {
+          padding 0;
+        }
+      }
+    }
+
     .days {
+
+      height 210px;
+
       .day {
         position relative;
         display inline-block;
@@ -45,14 +87,16 @@
           }
         }
 
-        &:hover {
-          .background-behind {
-            transform translate(-50%, -50%) scale(1);
-            background lighten(#008B7D, 10%);
-          }
+        @media (min-width 769px) {
+          &:hover {
+            .background-behind {
+              transform translate(-50%, -50%) scale(1);
+              background lighten(#008B7D, 10%);
+            }
 
-          .day-value {
-            color white;
+            .day-value {
+              color white;
+            }
           }
         }
 
@@ -78,7 +122,7 @@
           top: 50%;
           left: 50%;
           transform translate(-50%, -50%) scale(0)
-          transition transform .3s
+          transition all .3s
           background #008B7D;
         }
       }
