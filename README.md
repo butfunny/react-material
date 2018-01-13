@@ -2,6 +2,8 @@ npm i -g `webpack gulp`
 
 npm i
 
+gulp `package-assets`
+
 gulp `dev`
 
 open `localhost:3030`
