@@ -1,7 +1,7 @@
 {
-  "name": "Adterial",
+  "name": "React-material",
   "version": "1.0.0",
-  "description": "A side project from Malaysia",
+  "description": "React Material",
   "main": "dev-server.js",
   "scripts": {
     "start": "node ./server/prod-server.js",
